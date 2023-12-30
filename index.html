@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&family=Roboto+Mono:wght@500&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>VIBE</title>
+</head>
+<body>
+    <h1 class="header1">VIBE</h1>
+    <div class="startMessage" id="startDiv" style="display: none;">
+        <p id="startMessage"></p>
+    </div>
+    <br>
+    <br>
+<!-- div to to get name from the user and display -->
+<input class="c-checkbox" type="checkbox" id="checkbox">
+<div class="c-formContainer">
+  <form class="c-form" action="/">
+    <input class="c-form__input" id="userNameInput" placeholder="Full Name" autocomplete="off" spellcheck="false" type="text" oninput="changeInputColor()" required>
+    <label class="c-form__buttonLabel" for="checkbox" onclick="startGreeting()">
+      <button class="c-form__button" type="button">Go</button>
+    </label>
+    <label class="c-form__toggle" for="checkbox" onclick="startclick()" data-title="Start"></label>
+</form>
+</div>
+
+<div class="resultdiv" id="resultDiv" style="display: none;">
+    <p id="greetingMessage"></p>
+</div>
+
+<!-- div2 for displaying the new content  -->
+<!-- style="display: none;" -->
+<div class="emotion" id="mood_of_the_user" style="display: none;">
+
+<div class="checkbox1" id="emoji1">
+<label for="checkbox1" class="toggle-button" onclick="toggleCheckbox('checkbox1')">
+<input type="checkbox" value="1" name="fooby[1][]" id="checkbox1" class="hidden-checkbox" onclick="onlyOne(this)">
+ <!-- <i>&#128512;</i> -->
+ <i><img src="happy.jpg" alt=""></i>
+<span>Happy</span>
+</label>
+</div>
+
+<br>
+<div class="checkbox1">
+<label for="checkbox2" class="toggle-button" onclick="toggleCheckbox('checkbox2')">
+<input type="checkbox" value="2" name="fooby[1][]" id="checkbox2" class="hidden-checkbox" onclick="onlyOne(this)">
+<i><img src="sad.jpg" alt=""></i>
+<span>Sad</span>
+</label>
+</div>
+
+<br>
+
+
+<div class="checkbox1">
+<label for="checkbox3" class="toggle-button" onclick="toggleCheckbox('checkbox3')">
+<input type="checkbox" value="3" name="fooby[1][]" id="checkbox3" class="hidden-checkbox" onclick="onlyOne(this)">
+<i><img src="angry.jpg" alt=""></i>
+<span>Angry</span>
+</label>
+</div>
+
+
+<div class="checkbox1">
+<label for="checkbox4" class="toggle-button" onclick="toggleCheckbox('checkbox4')">
+<input type="checkbox" value="4" name="fooby[1][]" id="checkbox4" class="hidden-checkbox" onclick="onlyOne(this)">
+<i><img src="depressed.jpg" alt=""></i>
+<span>Tired</span>
+</label>
+</div>
+
+</div>
+
+ <!-- div for happy checkbox  -->
+ <div class="div3" id="forhappy" style="display: none;">
+    <video id="videoPlayer1" width="640" height="320" autoplay onclick="start(this)">
+        Your browser does not support the video tag.
+      </video>
+      <audio class="audioElement"></audio>
+
+      <div class="cont">
+          <h2>Let's make you feel better &#128522;</h2>
+          <p>your tasks for the day</p>
+         
+      <div class="image-container">
+          <img onclick="toggleCompleted1('plant(1).mp4',event)" src="img/13.jpg" alt="Your Image Description">
+          <p class="clickableParagraph" data-sound="audio/ft-audio.mp3" onclick="toggleCompleted1('plant(1).mp4',event)">Eat healhty</p>
+      </div>
+  
+      <div class="image-container">
+          <img onclick="toggleCompleted2('plant(2).mp4',event)"" src="img/17.jpg" alt="Your Image Description">
+          <p class="clickableParagraph" data-sound="audio/ft-audio.mp3" onclick="toggleCompleted2('plant(2).mp4',event)">Complete Work</p>
+      </div>
+  
+      <div class="image-container">
+          <img onclick="toggleCompleted3('plant(3).mp4',event)" src="img/15.jpg" alt="Your Image Description">
+          <p class="clickableParagraph" data-sound="audio/ft-audio.mp3" onclick="toggleCompleted3('plant(3).mp4',event)">Drink water</p>
+      </div>
+             
+      </div>
+</div> 
+
+
+<!-- div for sad checkbox -->
+<div class="div3" id="forsad" style="display: none;">
+    <video id="videoPlayer2" width="640" height="320" autoplay onclick="start(this)">
+        Your browser does not support the video tag.
+      </video>
+      <audio class="audioElement"></audio>
+
+    <div class="cont">
+        <h2>Let's make you feel better &#128522;</h2>
+        <p>your tasks for the day</p>
+       
+    <div class="image-container">
+        <img onclick="toggleCompleted4('plant(1).mp4',event)" src="img/16.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3" onclick="toggleCompleted4('plant(1).mp4',event)">Listen to your favourite songs</p>
+    </div>
+
+    <div class="image-container">
+        <img onclick="toggleCompleted5('plant(2).mp4',event)"" src="img/14.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3" onclick="toggleCompleted5('plant(2).mp4',event)">Talk to someone about how you feel</p>
+    </div>
+
+    <div class="image-container">
+        <img onclick="toggleCompleted4('plant(3).mp4',event)" src="img/7.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3" onclick="toggleCompleted5('plant(3).mp4',event)">Go to your favourite spot</p>
+    </div>
+           
+    </div>
+</div>
+<p style="display: none;" id="para2" class="para4">Hope your mood is uplifted</p> 
+
+<!-- div for depressed checkbox -->
+<div class="div3" id="forangry" style="display: none;">
+    <video id="videoPlayer3" width="640" height="320" autoplay onclick="start(this)">
+        Your browser does not support the video tag.
+      </video>
+      <audio id="audioElement"></audio>
+
+      <div class="cont">
+        <h2>Let's try to calm down &#x1F9D8;&#x200D;&#x2642;&#xFE0F;</h2>
+        <p>your tasks for the day</p>
+       
+    <div class="image-container">
+        <img onclick="toggleCompleted7('plant(1).mp4',event)" src="img/5.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3" onclick="toggleCompleted7('plant(1).mp4',event)">Play your favorite sport</p>
+    </div>
+
+    <div class="image-container">
+        <img onclick="toggleCompleted8('plant(2).mp4',event)"" src="img/6.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3"  onclick="toggleCompleted8('plant(2).mp4',event)">Pillow punch therapy</p>
+    </div>
+
+    <div class="image-container">
+        <img onclick="toggleCompleted9('plant(3).mp4',event)" src="img/4.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3"  onclick="toggleCompleted9('plant(3).mp4',event)">Go for a walk</p>
+    </div>
+           
+      </div>
+</div>
+<!-- <p style="display: none;" id="para4" class="para4">Hope you feel energized</p>  -->
+
+<!-- div for tired checkbox -->
+<div class="div3" id="fortired" style="display: none;">
+    <video id="videoPlayer4" width="640" height="320" autoplay onclick="start(this)">
+        Your browser does not support the video tag.
+      </video>
+      <audio id="audioElement"></audio>
+
+      <div class="cont">
+        <h2>Let's try to get some rest</h2>
+        <p>your tasks for the day</p>
+       
+    <div class="image-container">
+        <img onclick="toggleCompleted10('plant(1).mp4',event)" src="img/15.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3"  onclick="toggleCompleted10('plant(1).mp4',event)">Stay hydrated</p>
+    </div>
+
+    <div class="image-container">
+        <img onclick="toggleCompleted11('plant(2).mp4',event)"" src="img/17.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3"  onclick="toggleCompleted11('plant(2).mp4',event)">Postpone important activities</p>
+    </div>
+
+    <div class="image-container">
+        <img onclick="toggleCompleted12('plant(3).mp4',event)" src="img/12.jpg" alt="Your Image Description">
+        <p class="clickableParagraph" data-sound="audio/ft-audio.mp3"  onclick="toggleCompleted12('plant(3).mp4',event)">Sleep to feel refreshed</p>
+    </div>
+           
+      </div><br>
+       
+</div>
+<p style="display: none;" id="para4" class="para4">Hope you feel energized</p> 
+
+
+<!-- ending div -->
+
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>
